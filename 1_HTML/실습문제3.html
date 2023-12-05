@@ -9,45 +9,55 @@
     <h2>주문하기</h2>
     <form action="">
       <label for="name">고객명 :</label>
+      <input type="text" id="name" name="name" />
+      
       <input type="name" id="name" />
-
       <br /><br />
       <label for="tel">전화번호 :</label>
-      <input type="tel" id="tel" />
-
-      <br /><br />
+      <input type="tel" id="tel" name="tel" />
+  <br /><br />
       <label for="email">E-mail :</label>
-      <input type="email" id="email" />
+      <input type="email" id="email" name="email" />
     </form>
     <fieldset>
       <legend>피자사이즈</legend>
-      <label> <input type="radio" name="small" value="small"/> Small </label>
+      <input type="radio" id="small" name="size" value="small" />
+      <label for="small">Small</label>
       <br /><br />
-      <label> <input type="radio" name="medium" value="Medium" />Medium </label>
+      <input type="radio"  id="medium"name="size" value="medium"/>  
+      <label for="medium">medium</label>
       <br /><br />
-      <label> <input type="radio" name="large" value="large" />Large </label>
+      <input type="radio"  id="large"name="size" value="large"/> 
+      <label for="large">Large</label>
     </fieldset>
     <fieldset>
       <legend>토핑 선택</legend>
+      <!--(input :checkbox[name="topping"]+label)*4-->
       <label>
-        <input type="checkbox" name="topping" value="bacon" /> 베이컨
+        <input type="checkbox" name="topping" id="bacon" value="bacon" /> 베이컨
       </label>
       <br /><br />
       <label>
-        <input type="checkbox" name="topping" value="cheese" />치즈
+        <input type="checkbox" name="topping" id="cheese"value="cheese" />치즈
       </label>
       <br /><br />
-      <label> <input type="checkbox" name="topping" value="onion" />양파 </label>
+      <label> <input type="checkbox" name="topping" id="onion"value="onion" />양파 </label>
       <br /><br />
-      <label> <input type="checkbox" name="topping" value="mushroom" />버섯</label>
+      <label> <input type="checkbox" name="topping" id="mushroom" value="mushroom" />버섯</label>
     </fieldset>
-    
+    <br><br>
       <label for="time">희망 배송 시간:</label>
       <input type="time" id="time"/>
-      <P>배송 시 요청사항:</P>  
-      <textarea name="" id="" cols="30" rows="10" style="resize:none"placeholder="내용을 입력하세요"></textarea>
+      <label for="memo">배송 시 요청사항:</label>  
+      <textarea name="memo"
+       id="memo" 
+       cols="30" 
+       rows="10" 
+       style="resize:none"
+       placeholder="내용을 입력하세요"></textarea>
+   
       <br>
-      <input type = "submit" value = "전송" />
+      <button type = "submit" value = "전송"></button>
 </form>
   </body>
 </html>
