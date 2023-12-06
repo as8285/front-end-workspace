@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: lightsalmon;
+  background: linear-gradient(purple, pink);
+  /* 해당하는 만큼 정해주는것 vh  */
+  height: 100vh;
+  padding: 40px;
+}
+.profile-card {
+  /* background-color: white; */
+  border: 2px;
+  width: 350px;
+  /* 여백 주기 margin */
+  margin: 50px auto;
+  border-radius: 10px;
+  /* 글자 가운데 정렬 */
+  text-align: center;
+  padding: 20px;
+  /* 사이즈 넓이 변형 x */
+  box-sizing: border-box;
+}
+.profile-card img {
+  width: 150px;
+  height: 150px;
+  /* object0-fit:cover를 하면 원하는 데로 짤림  */
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-card h1 {
+  font-size: 1.5rem;
+  color: gray;
+  /* margin을 줘서 팬더랑 간격 해줌 */
+  margin-top: 5px;
+}
+.profile-card a {
+  display: block;
+  background-color: lightsalmon;
+
+  /* 밑줄 제거하기  */
+  text-decoration: none;
+  color: white;
+  /* 안에서 여백 주기 */
+  padding: 15px;
+  /* a 태그를 여백 주고 싶다  0px은 여백을 뜻함*/
+  margin: 15px 0px;
+  /* 글씨를 굵게 */
+  font-weight: bold;
+}
+/* 눌렀을 때 색상 결정 */
+.profile-card a:hover {
+  background-color: white;
+  color: black;
+}
