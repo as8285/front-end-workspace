@@ -382,3 +382,32 @@ item {
 ## grid-column-stat, grid-column-end,
 
 grid-column,grid-row-stat,grid-row-end, grid-row
+
+## justify-items,
+
+align-items,
+
+- 셀들의 정렬을 지정하는 속성
+
+```css
+.container {
+  justify-items: start;
+  justify-items: center;
+  justify-items: end;
+
+  align-items: start;
+  align-items: center;
+  align-items: end;
+}
+```
+
+## justify-self,align-self
+
+- 각 하나의 셀의 정렬을 지정하는 속성
+
+```css
+.item {
+  justify-self: center;
+  align-self: center;
+}
+```
