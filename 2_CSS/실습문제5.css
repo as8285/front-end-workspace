@@ -1,0 +1,43 @@
+body {
+  background: linear-gradient(45deg, salmon, lightpink);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+}
+.squre {
+  width: 10px;
+  height: 50px;
+  background: white;
+  margin: 3px;
+  border-radius: 10px;
+  animation: squareScale 1s linear infinite;
+}
+/* wave 만들기 */
+.squre:nth-child(2),
+.squre:nth-child(6) {
+  animation-delay: 0.1s;
+}
+.squre:nth-child(3),
+.squre:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.squre:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* 스케일을 변경 시키는 것 */
+@keyframes squareScale {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}

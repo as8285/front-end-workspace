@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 출력
+      //   document.write(111);
+      //   **console.log(222);**
+      //   alert(333);
+      /*
+      여러 줄 주석 가능 !! 
+    */
+    </script>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4602e82315.js"
+      crossorigin="anotmous"
+    ></script>
+  </head>
+  <body>
+    <i class="fa-solid fa-heart"></i>
+
+    <h1>변수</h1>
+    <p>어떠한 값을 저장하는 공간</p>
+    <!-- var,const,let -->
+    <script>
+      // 옛날 방식 - 거의 사용 X 오류를 안잡아줌
+      var varA = 100; // var 변수 = 값;
+      console.log(varA);
+      varA = "ㅋㅋㅋ";
+      console.log(varA); // ㅋㅋㅋ
+      // 상수 - 값을 수정할 수 없다.(자주)
+      const constB = 200; // const 변수 = 값;
+      console.log(constB); // 200
+      // constB = 300; //Uncaught TypeError (에러 나면 밑에꺼도 안나옴)
+
+      // 변수 - 값을 수정할 수 있다.(가끔)
+      let letC = 300;
+      console.log(letC);
+      letC = "zzz";
+      console.log(letC); // zzz
+
+      // typeof: 데이터 타입 확인
+      console.log(typeof constB); // number(숫자로 확인됨)
+      console.log(typeof letC); // string(언어라고 확인됨)
+    </script>
+
+    <!-- 기본 데이터 타입 -->
+    <!-- 문자열 -->
+    <script>
+      let message = '"안녕"이라고 말해 ';
+      // message = "\"안녕\"이라고 말해";
+      console.log(message);
+      console.log(message[1]); // 안
+      console.log(message.length); // 문자열의 길이 총 11
+      console.log("누군가에게", message);
+      console.log("누군가에게 " + message);
+      console.log(`누군가에게 ${message}`); // ${} 표시를 쓴다면  가능 하다.
+
+      const name = "윤민영";
+      const age = "3";
+      console.log(`안녕? 내 이름은 ${name}이고, 나이는 ${age}살`);
+    </script>
+
+    <!-- 숫자 -->
+
+    <script>
+      const num1 = 10;
+      const num2 = 3;
+      console.log(num1 + num2); //13
+      console.log(num1 - num2); //7
+      console.log(num1 * num2); //30
+      console.log(num1 / num2); //3.3333333...
+      console.log(num1 % num2); // 나머지 : 1
+      console.log(num1 ** num2); // 제곱 :10^3 = 1000
+
+      // 문자열 -> 숫자
+      console.log(typeof "100"); // string
+      console.log(typeof Number("100")); // number
+      console.log(Number("Hello")); // Nan - 숫자가 아닌데 문자가 잘못들어가서
+
+      // 숫자 - > 문자열
+      console.log(typeof String(200)); // string
+
+      // 실수 -> 정수
+      console.log(parseInt(1.8));
+    </script>
+    <!-- underfined, null-->
+    <script>
+      let test;
+      console.log(test); // undefined - 값을 매기지 않아서 정의 되지 않음
+
+      test = null;
+      console.log(test); // null - 값을 매기지 않아서 아무것도 없음
+    </script>
+    <!-- Boolean과 비교 연산자 -->
+    <script>
+      console.log(true);
+      console.log(false);
+      let num3 = 100;
+      let num4 = 200;
+      console.log(num3 < num4); //true
+      console.log(num3 >= num4); //false
+
+      num4 = 100;
+      num4 = "100";
+      console.log(num3 == num4); //true
+      console.log(num3 != num4); //false
+
+      //데이터 타입까지 체크
+      console.log(num3 === num4); //true - > false
+      console.log(num3 !== num4); //false ->true
+
+      //   다른 자료형 -> Boolean
+      //    false : 0, NaN, "" , null,undefined
+      //   나머지는 true
+      console.log(Boolean(0)); // false
+      console.log(Boolean(2)); // true
+    </script>
+    <!-- 논리 연산자 -->
+    <script>
+      const a = 100;
+      const b = 200;
+      // && : 그리고
+      console.log(a < 200 && a == 100); // &&그리고 표시 a가 200 보다 크고 100이랑 같냐
+      // true && true = true
+      console.log(a > 200 && a == 100); // false && true = false
+      //   ||: 또는(or)
+      consol.log(a > 200 || a == 100); // false ||true = true
+      console.log(a > 200 || a != 100); // false || false = false
+
+      // ! : 아니다(not)
+      console.log(!true); // false
+      console.log(!false); // true
+      console.log(!!(a > b)); // false
+    </script>
+    h1
+  </body>
+</html>

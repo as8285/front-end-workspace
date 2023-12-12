@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>반복문</h1>
+
+    <!-- for
+ for(초기값;조건식; 증감식) {}
+ -->
+    <script>
+      // 1 ~ 10 까지 출력하세요
+      //   console.log(1);
+      //   console.log(2);
+      //   .........................
+      // console.log(10);
+      // 전위연산자와(++n, --n) 후위연산자(n++, n--)
+      // 공통점 - 연산:n = n + 1
+      // 차이점! 전위는 계산하고 출력, 후위는 출력하고 계산
+      let num = 2;
+      console.log(num++); // 2 출력 -> 3으로 해서 답이 3
+      console.log(num); // 그래서 지금 얼마야?3
+      console.log(--num); // 3 되고 나서 2
+      console.log(num); // 답은 그래서 2
+      // for문은 const는 사용 못한다.
+      // 복합연산자
+      // num 값을 3을 더한 값을 다시 num에 저장
+      num = num + 3; // 일반적으로 아는 방법
+      num += 3; // 복합 대입 연산자
+      console.log(num); // 5
+      console.log(num); // 8
+      // for(let i = 1; i <= 10; i +=3) {} //  1출력후 3을 더해준다 = 1,4,7,10
+      for (let i = 1; i <= 10; i++) {
+        /* 초기값 -> 조건문 만족 ,증감식 
+        그후에 다시 조건문으로 만남 10 까지만 출력된다.*/
+        console.log(i);
+      }
+    </script>
+    <script>
+      const movies = [
+        "서울의 봄",
+        "3일의 휴가",
+        "나포레옹",
+        "괴물",
+        "싱글인 서울",
+      ];
+      // 영화 제목을 하나씩 출력해보세요
+      console.log(movies[0]);
+      console.log(movies[1]);
+      console.log(movies[2]);
+      console.log(movies[3]);
+      console.log(movies[4]);
+      // for문으로 출력한다면??
+      // for (let i = 0; i <=4; i++) 도 가능
+      // for (let i = 0; i < movies.length; i++) 가능하다.
+      for (let i = 0; i <= movies.length - 1; i++) {
+        // 총 다섯번!
+        console.log(i); // i값 입력 01234 인데 무비로 간다.
+        console.log(movies[i]); // 0 1 2 3 4 까지 올라가야한다.
+      }
+    </script>
+    <!-- for in
+        for(const 인덱스 in 배열 ){}
+      -->
+    <script>
+      for (const index in movies) {
+        console.log(index);
+        console.log(movies[index]);
+      }
+    </script>
+    <!-- for of
+    for(const 값  of 배열){}
+    -->
+    <script>
+      for (const value of movies) {
+        console.log(value);
+      } // of 는 그냥 하나씩 빼준다. 자바에서는 안돌아간다.
+    </script>
+    <!--
+     while(조건) {
+        조건이 true면 계속 
+    } -->
+
+    <!-- 무한루프 (자바에서 씁니다.) -->
+    <script>
+      let i = 0;
+      // while( i <= movies.length 이상태면 계속 돌아서 무한루프이다.
+      // while (true){콘솔값} ---- 무한 루프로 돈다 ...
+      // 조건을 걸어서 조건에 해당되면 안에서 STOP!
+let check = 0;
+    //   const check =confirm("계속 진행하시겠습니까?"); // true false
+      console.log(check);
+    //   while(confirm("계속 진행하시겠습니까?") ){
+    //     console.log(++check);
+    //   }
+ </script>
+ <!-- break와 continue -->
+ <script>
+    // 1 ~ 10까지만 홀수만 출력 
+    // 순서가 중요 합니다....  continue 먼저 하면 9까지 나온다.
+  for(let number = 1; number <= 10; number++) {
+    if(number === 8) {
+        break;
+    }
+    if(number % 2 === 0){
+        continue; // 계속 출력은 되는데 콘티뉴를 만나는 순간 바로 위로 간다.
+    }
+    console.log(number);
+ }
+    //     console.log(number++);
+    //     if (number > 10) {
+    //         break;
+    //     }
+    //     if(number % 2 === 0) {
+    //         continue; // continue는 조건을 건너 뛰는 것 
+    //     }else{
+    //         console.log(number++);
+    //     }
+      // while문 ! 
+      let number = 0;
+      while(true){
+        number++;
+        if(number==10) break; // 한줄일때는 사용가능 
+        if(number % 2 == 0) continue;
+        console.log(number);
+        }
+      
+ </script>
+ <!-- 2차원 배열 + 중첩 for문 -->
+ <script>
+const arr = [
+    [1, 2, 3],
+    [4, 5, 6], 
+    [7, 8, 9],
+    ];
+    console.log(arr);
+    // 1 ~ 9 순서대로 출력하세요(i,j,k..)
+    console.log(arr[0]); // [1,2,3]
+    console.log(arr[0][0]); // 1
+    console.log(arr[0][1]); // 2 
+// ...
+    console.log(arr[1][0]);// 4
+// .. 
+console.log(arr[2][2]); // 9
+
+// for(let i = 0; i <= 2; i++) {
+    for(let i = 0; i <= arr.legth; i++) { // 3 
+    for(let j = 0; j < arr[i].length; j++){ // arr[1][2][3]
+        console.log(arr[i][j]);
+    }
+    }
+  
+       
+
+ </script>
+</html>
