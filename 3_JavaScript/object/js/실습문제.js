@@ -1,0 +1,2 @@
+function printValue() {}
+function stringLenth() {}

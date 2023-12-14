@@ -95,5 +95,19 @@
       console.log(p3);
       p3.hello();
     </script>
+    <!-- console.log("합계")
+    console.log("합계",12)
+    cosole.log("합계",12,"평균")
+    -->
+    <!-- 가변 매개변수(파라미터) -->
+    <script>
+      function sum(...args) {
+        console.log(args);
+      }
+      sum(10, 20);
+      sum(10, 20, 30);
+      sum(10, 20, 30, 40);
+      sum(10, 20, 30, 40, 50);
+    </script>
   </body>
 </html>

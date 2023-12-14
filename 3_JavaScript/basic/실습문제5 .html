@@ -9,20 +9,20 @@
     <!-- 테스트는 자유! -->
     <!-- Q1. 세 수의 합을 구하는 함수를 만들어 주세요. -->
     <script>
-      /* const result = arr.reduce(function (accumulator, data) {
-              return accumulator + data
-            }, 2);*/
-
-      console.log(result); // 100
+      function add(a, b, c) {
+        return a + b + c;
+      }
+      console.log(add(10, 20, 30)); // 60
+      console.log(add(20, 30, 50)); // 100
     </script>
 
     <!-- Q2. 삼각형의 너비와 높이에 대해 삼각형의 넓이를 구하는 함수를 만들어 주세요. 
               삼각형의 넓이 = (삼각형의 너비 * 삼각형의 높이) / 2;
     -->
     <script>
-      const triangle = (a, b) => {
-        return (a * b) / 2;
-      };
+      function triangle(width, height) {
+        return (width * height) / 2;
+      }
       console.log(triangle(5, 8)); // 20
       console.log(triangle(3, 8)); // 12
     </script>
@@ -32,24 +32,25 @@
              원의 넓이 = 반지름 * 반지름 * 3.14;
     -->
     <script>
-      const round = (a) => {
-        return 2 * a * 3.14;
-      };
-      const area = (b) => {
-        return b * b * 3.14;
-      };
+      function round(r) {
+        return 2 * r * 3.14;
+      }
+      function area(r) {
+        return r * r * 3.14;
+      }
       console.log(round(2)); // 12.56
       console.log(area(3)); // 28.26
     </script>
 
     <!-- Q4. 시작 수(n1)과 끝 수(n2)가 주어졌을 때 n1 ~ n2의 합계를 구하는 함수를 만들어 주세요 -->
     <script>
-      const sum = (a, b) => {
-        for (let i = a; i <= b; i++) {
-          console.log(i); // 10 ~ 20
+      function sum(n1, n2) {
+        let total = 0;
+        for (let i = n1; i <= n2; i++) {
+          total += i;
         }
-        return a + b;
-      };
+        return total;
+      }
       console.log(sum(10, 20)); // 165
       console.log(sum(100, 200)); // 15150
     </script>
@@ -61,11 +62,42 @@
                구매가가 100000원 이상 : 10%
     -->
     <script>
-      const buy = (a) => {
-        for(let i = a; i <= )
+      function calculate(price) {
+        //   if (price >= 100000) {
+        //     //10원 이상 -> 그 뒤에 나오는 조건은 다 10만원 미만
+        //     return price * 0.9;
+        //   } else if (price >= 50000) {
+        //     // 5만원 미만 이다 .
+        //     return price * 0.925;
+        //   } else if ((price) => 10000) {
+        //     // 만원 이상 -> 그 외에는 만원 미만
+        //     return price * 0.95;
+        //   }
+        //   return price;
+        // }
+        // return price;
+        let rate = 0;
+        if (price >= 100000) {
+          rate = 10;
+        } else if (price >= 50000) {
+          rate = 7.5;
+        } else if (price >= 10000) {
+          rate = 5;
+        }
+        return (price * (100 - rate)) / 100;
+        /*let rate = 0;
+      if (price >=100000) {
+      rate = 0.9;
+      } else if (price >= 50000){
+      rate = 0.925;
+      } else if (price >= 10000) {
+      rate = 0.95;
       }
-        console.log(calculate(20000)); // 19000
-        console.log(calculate(65000)); // 60125
+      return price * (100 - rate )/ 100*/
+      }
+
+      console.log(calculate(20000)); // 19000
+      console.log(calculate(65000)); // 60125
     </script>
   </body>
 </html>
