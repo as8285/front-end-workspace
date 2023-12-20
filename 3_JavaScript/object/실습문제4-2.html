@@ -100,7 +100,9 @@
         // a2fawef@google.com
         const regExp = /^\w+@\w+\.\w+$/;
         return regExp.test(userName.value);
-      } // 여기 저기 쓰이는 공통함수 만들기!
+      }
+
+      // 여기 저기 쓰이는 공통함수 만들기!
       function inputHandler(e, check, message) {
         if (check) {
           e.target.nextElementSibling.style.color = "green";
