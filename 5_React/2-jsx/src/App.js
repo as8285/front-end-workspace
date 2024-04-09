@@ -1,5 +1,5 @@
+import Counter from "./components/Counter";
 const App = () => {
-  return <div>Hello,React!</div>;
+  return <Counter />;
 };
-
 export default App;
