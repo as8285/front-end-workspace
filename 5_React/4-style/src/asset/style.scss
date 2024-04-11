@@ -1,0 +1,44 @@
+/* 변수 */
+$main-color: pink;
+$primary-size: 8rem;
+
+/* 믹스인 */
+@mixin text-center {
+  text-align: center;
+}
+
+/* 상속 */
+.border {
+  border: 10px solid gold;
+}
+
+div {
+  @include text-center;
+
+  background-color: black;
+  color: white;
+  font-size: $primary-size;
+
+  /* 중첩 */
+  h1 {
+    &:hover {
+      background-color: $main-color;
+    }
+    color: yellow;
+  }
+}
+
+.class {
+  @extend .border;
+
+  background-color: green;
+  font-size: $primary-size;
+
+  @media screen and (max-width: 800px) {
+    background-color: $main-color;
+  }
+}
+
+#id {
+  background-color: navy;
+}
