@@ -7,19 +7,20 @@ const Div = styled.div`
   color: white;
   font-size: 6rem;
 `;
+
 const App = () => {
   return (
     <>
       <div
-        /*style={{ backgroundColor: 
-        "black", color: "white" }}*/
-        // 리액트는 className 이라고 해야지 스타일이 적용된다.
+        /*style={{ backgroundColor: "black", color: "white" }}*/
         className="class"
-        /* id="id"*/
+        /*id="id"*/
       >
-        <h1 className={style.deco}>Hello,React Styling!</h1>
+        <h1 className={style.deco}>Hello, React Styling!</h1>
       </div>
+      <Div>Styled Components!!</Div>
     </>
   );
 };
+
 export default App;
