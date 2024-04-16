@@ -1,4 +1,3 @@
-import { Component } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
@@ -9,9 +8,11 @@ const Header = styled.header`
   height: 70px;
   line-height: 70px;
   box-sizing: border-box;
+
   h1 {
-    font: 3rem;
+    font-size: 3rem;
   }
+
   nav {
     a {
       margin-right: 15px;

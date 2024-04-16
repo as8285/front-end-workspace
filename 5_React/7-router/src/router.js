@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import { axios } from "axios";
-import Home from "./Pages/Home";
-import Error from "./Pages/Error";
-import Create from "./Pages/Create";
-import Layout from "./Components/Layout";
+import Home from "./pages/Home";
+import Error from "./pages/Error";
+import Create from "./pages/Create";
+import Layout from "./components/Layout";
+import Detail from "./pages/Detail";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,9 +15,14 @@ const router = createBrowserRouter([
       { path: "create", element: <Create /> },
     ],
   },
-  // {
-  // path: "/create",
-  //element: <Create />,
-  //},
+  {
+    path: "/detail/:no",
+    element: <Detail />,
+  },
+  //   {
+  //     path: "/create",
+  //     element: <Create />,
+  //   },
 ]);
+
 export default router;

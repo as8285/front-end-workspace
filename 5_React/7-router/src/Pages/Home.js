@@ -1,6 +1,7 @@
 import { getAnimals, delAnimal } from "../api/animal";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+
 const Table = styled.table`
   width: 100%;
   th {
@@ -28,24 +29,24 @@ const Home = () => {
 
   const onDelete = async (no) => {
     await delAnimal(no);
-    // 삭제 새로고침 x
     setAnimals(animals.filter((animal) => animal.no !== no));
   };
 
   return (
-    <table>
-      <thread>
+    <Table>
+      <thead>
         <tr>
           <th>이름</th>
           <th>나이</th>
           <th>삭제</th>
         </tr>
-      </thread>
-
+      </thead>
       <tbody>
         {animals.map((animal) => (
           <tr key={animal.no}>
-            <td>{animal.name}</td>
+            <td>
+              <a href={`/detail/${animal.no}`}>{animal.name}</a>
+            </td>
             <td>{animal.age}</td>
             <td>
               <button onClick={() => onDelete(animal.no)}>삭제</button>
@@ -53,7 +54,7 @@ const Home = () => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 };
 export default Home;

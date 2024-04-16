@@ -1,41 +1,46 @@
+import { getAnimal, updateAnimal } from "../api/animal";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { addAnimal } from "../api/animal";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 const Div = styled.div`
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 70px);
-
   * {
     margin-right: 5px;
     padding: 5px;
   }
-
   button {
     background-color: black;
     color: white;
     border-radius: 4px;
     border: 1px solid black;
-    cursor: pointer;
   }
 `;
-
-const Create = () => {
+const Detail = () => {
+  const { no } = useParams();
   const navigate = useNavigate();
-  const [animal, setAnimal] = useState({});
-  const add = async () => {
-    await addAnimal(animal);
+  // 초기 세팅을 해줘야 한다.
+  const [animal, setAnimal] = useState({ name: "", age: 0 });
+
+  const animalAPI = async () => {
+    const response = await getAnimal(no);
     navigate("/");
+    setAnimal(response.data);
   };
 
+  useEffect(() => {
+    animalAPI();
+  }, []);
+  const update = async () => {
+    await updateAnimal(no);
+    setAnimal(response.data);
+  };
   return (
-    <Div>
+    <>
       <input
         type="text"
-        placeholder="동물 이름 입력"
         value={animal.name}
         onChange={(e) =>
           setAnimal((prev) => ({ ...prev, name: e.target.value }))
@@ -43,14 +48,14 @@ const Create = () => {
       />
       <input
         type="text"
-        placeholder="동물 나이 입력"
         value={animal.age}
         onChange={(e) =>
           setAnimal((prev) => ({ ...prev, age: e.target.value }))
         }
       />
-      <button onClick={add}>동물 추가</button>
-    </Div>
+      <button onClick={() => updateAnimal(animal.no)}>정보 수정</button>
+    </>
   );
 };
-export default Create;
+
+export default Detail;
